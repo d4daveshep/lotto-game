@@ -6,7 +6,7 @@ import game_config
 class Ticket:
 
     # constructor
-    def __init__(self, lines_per_ticket=game_config.BALLS_DRAWN):
+    def __init__(self, lines_per_ticket=game_config.NUMBER_OF_BALLS_PER_DRAW):
         self._lines_per_ticket = lines_per_ticket
 
         self._lines = []
