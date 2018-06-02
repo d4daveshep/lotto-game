@@ -1,19 +1,22 @@
 import random
+import game_config
+
 
 # define the Drum class
 class Drum:
 
     # constructor
-    def __init__(self, size):
+    def __init__(self, size=game_config.BALLS_DRAWN):
         self.size = size
 
         # list of balls left in the drum
-        self.balls = [ x+1 for x in range(self.size) ]        
+        self.balls = [x + 1 for x in range(self.size)]
 
-    # Return the number of balls left in the drum
+        # Return the number of balls left in the drum
+
     def num_balls(self):
         return len(self.balls)
-        
+
     # check a ball is in the drum?
     def has_ball(self, ball):
         return ball in self.balls
@@ -22,11 +25,11 @@ class Drum:
     def draw(self):
         if self.num_balls() < 1:
             raise EmptyDrumException("Drum is empty")
-        ball_num = random.randint(0,len(self.balls)-1)
+        ball_num = random.randint(0, len(self.balls) - 1)
         ball = self.balls.pop(ball_num)
         return ball
-    
-    
+
+
 # define the EmptyDrumException
 class EmptyDrumException(RuntimeError):
     pass

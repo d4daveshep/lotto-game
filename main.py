@@ -8,13 +8,8 @@ drum = Drum(SIZE)
 drawn_balls = []
 for i in range(SIZE):
     drawn_balls.append(drum.draw())
-    
+
 print(drawn_balls)
 
-line = Line(6,40)
+line = Line()
 print(line.numbers())
-
-
-    
-
-
