@@ -23,5 +23,19 @@ class Line:
     def numbers_per_line(self):
         return self._numbers_per_line
 
-    def numbers(self):
+    def numbers(self, chosen_numbers=None):
+        if chosen_numbers != None:
+
+            if self._numbers_per_line != len(chosen_numbers):
+                raise LineException("Line must have",self._numbers_per_line,"numbers per line")
+            else:
+                self._numbers = sorted(chosen_numbers)
+
         return self._numbers
+
+    def print_line(self):
+        print(self._numbers)
+
+class LineException(Exception):
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        super().__init__(*args, **kwargs)

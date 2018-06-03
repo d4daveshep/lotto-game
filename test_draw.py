@@ -7,6 +7,11 @@ def new_draw():
     from draw import Draw
     return Draw(1)
 
+@pytest.fixture
+def new_ticket():
+    from ticket import Ticket
+    return Ticket()
+
 
 def test_thedraw(new_draw):
     draw = new_draw
@@ -24,4 +29,15 @@ def test_thedraw(new_draw):
 
 
 def test_check_ticket():
-    assert 0
+    pass
+#    assert 0
+
+def test_check_line_in_ticket(new_draw, new_ticket):
+    draw = new_draw
+    draw.do_draw()
+
+    ticket = new_ticket
+    line = ticket.lines()[0]
+    print(line.print_line())
+
+
