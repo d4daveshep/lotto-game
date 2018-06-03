@@ -1,10 +1,12 @@
 import pytest
 import game_config
 
+
 @pytest.fixture
 def new_draw():
     from draw import Draw
     return Draw(1)
+
 
 def test_thedraw(new_draw):
     draw = new_draw
@@ -19,9 +21,6 @@ def test_thedraw(new_draw):
 
     # check we draw out the correct number of balls
     assert game_config.NUMBER_OF_BALLS_PER_DRAW == len(draw.balls_drawn())
-
-
-
 
 
 def test_check_ticket():

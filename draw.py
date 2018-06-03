@@ -4,7 +4,6 @@ from drum import Drum
 
 
 class Draw:
-
     _draw_number: int
 
     def __init__(self, draw_number):
@@ -12,10 +11,9 @@ class Draw:
         self._done = False
         self._drum = Drum()
         self._balls_drawn = []
-        
+
     def number(self):
         return self._draw_number
-
 
     def do_draw(self):
         if not self._done:
@@ -24,7 +22,6 @@ class Draw:
             self._done = True
         else:
             raise DrawAlreadyDoneException()
-
 
     def balls_drawn(self):
         if not self._done:

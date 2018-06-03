@@ -7,7 +7,8 @@ import game_config
 class Line:
 
     # constructor
-    def __init__(self, numbers_per_line=game_config.NUMBER_OF_BALLS_PER_DRAW, balls_in_drum=game_config.NUMBER_OF_BALLS_IN_DRUM):
+    def __init__(self, numbers_per_line=game_config.NUMBER_OF_BALLS_PER_DRAW,
+                 balls_in_drum=game_config.NUMBER_OF_BALLS_IN_DRUM):
         self._numbers_per_line = numbers_per_line
         self._balls_in_drum = balls_in_drum
 
