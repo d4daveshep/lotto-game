@@ -29,8 +29,8 @@ def test_thedraw(new_draw):
 
 
 def test_check_ticket():
-    pass
-#    assert 0
+    # TODO we need to finish checking the ticket
+   assert 0
 
 def test_check_line_in_ticket(new_draw, new_ticket):
     draw = new_draw

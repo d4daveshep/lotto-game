@@ -32,7 +32,7 @@ def test_draw_ball(new_drum):
     assert drum.has_ball(ball) == False
 
 
-# test drawing we can draw all the balls out
+# test we can draw all the balls out
 def test_draw_all_balls(new_drum):
     drum = new_drum
 
