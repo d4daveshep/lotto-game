@@ -17,7 +17,7 @@ def test_create_line(new_line):
     assert line.numbers_per_line() == NUMBERS_PER_LINE
 
     # check numbers are in ascending order
-    assert line.numbers() == sorted(line.numbers())
+    assert line.get_numbers() == sorted(line.get_numbers())
 
 def test_manually_chosen_line(new_line):
     line = new_line
@@ -26,24 +26,24 @@ def test_manually_chosen_line(new_line):
 
     my_numbers = [6,5,4,3,2,1]
 
-    line.numbers(my_numbers)
+    line.pick_numbers(my_numbers)
 
     # check numbers are stored in ascending order
-    assert line.numbers() == sorted(my_numbers)
+    assert line.get_numbers() == sorted(my_numbers)
 
     # check correct line number count
     my_numbers = [1,2,3,4,5] # too few
     with pytest.raises(LineException, message="Expecting LineException"):
-        line.numbers(my_numbers)
+        line.pick_numbers(my_numbers)
 
     my_numbers = [1,2,3,4,5,6,7] # too many
     with pytest.raises(LineException, message="Expecting LineException"):
-        line.numbers(my_numbers)
+        line.pick_numbers(my_numbers)
 
-    # check each number is in the drum
+    # check we can't add numbers that aren't valid balls in the drum
     my_numbers = [0,1,2,3,4,5]
     with pytest.raises(LineException, message="Expecting LineException"):
-        line.numbers(my_numbers)
+        line.pick_numbers(my_numbers)
 
 
 

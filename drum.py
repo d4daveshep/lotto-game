@@ -6,7 +6,7 @@ import game_config
 class Drum:
 
     # constructor
-    def __init__(self, size=game_config.NUMBER_OF_BALLS_PER_DRAW):
+    def __init__(self, size=game_config.NUMBER_OF_BALLS_IN_DRUM):
         self.size = size
 
         # list of balls left in the drum

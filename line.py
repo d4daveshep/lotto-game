@@ -23,14 +23,16 @@ class Line:
     def numbers_per_line(self):
         return self._numbers_per_line
 
-    def numbers(self, chosen_numbers=None):
-        if chosen_numbers != None:
+    def pick_numbers(self, chosen_numbers):
+        if self._numbers_per_line != len(chosen_numbers):
+            raise LineException("Line must have",self._numbers_per_line,"numbers per line")
+        else:
+            self._numbers = sorted(chosen_numbers)
 
-            if self._numbers_per_line != len(chosen_numbers):
-                raise LineException("Line must have",self._numbers_per_line,"numbers per line")
-            else:
-                self._numbers = sorted(chosen_numbers)
+        # TODO raise exception if any chosen number isn't actually a valid ball in the drum
 
+
+    def get_numbers(self):
         return self._numbers
 
     def print_line(self):
