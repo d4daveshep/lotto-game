@@ -20,7 +20,10 @@ class Ticket:
         return self._lines
 
     def print_ticket(self):
-        for line in self._lines:
-            line.print_line()
+        print('Ticket')
+        print('-' * 6)
+        for num, line in enumerate(self._lines,1):
+            print('Line',num,':',line.get_numbers())
+        print()
 
 

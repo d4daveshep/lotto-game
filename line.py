@@ -26,17 +26,20 @@ class Line:
     def pick_numbers(self, chosen_numbers):
         if self._numbers_per_line != len(chosen_numbers):
             raise LineException("Line must have",self._numbers_per_line,"numbers per line")
-        else:
-            self._numbers = sorted(chosen_numbers)
 
-        # TODO raise exception if any chosen number isn't actually a valid ball in the drum
+        # raise exception if any chosen number isn't actually a valid ball in the drum
+        drum = Drum(self._balls_in_drum)    # temporary drum
+        for ball in chosen_numbers:
+            if not drum.has_ball(ball):
+                raise LineException('Line contains',ball,'but it is not in the drum')
 
+        self._numbers = sorted(chosen_numbers)
 
     def get_numbers(self):
         return self._numbers
 
     def print_line(self):
-        print(self._numbers)
+        print(self.get_numbers())
 
 class LineException(Exception):
     def __init__(self, *args: object, **kwargs: object) -> None:

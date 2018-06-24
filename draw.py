@@ -26,6 +26,16 @@ class Draw:
         else:
             raise DrawAlreadyDoneException()
 
+    def print_draw(self):
+        print('Draw')
+        print('-' * 4)
+        if not self._done:
+            print('Ready to draw',game_config.NUMBER_OF_BALLS_PER_DRAW,'balls and',game_config.NUMBER_OF_BONUS_BALLS_PER_DRAW,'bonus ball')
+        else:
+            print('Drawn',len(self._balls_drawn),'balls and ',len(self._bonus_balls_drawn),'bonus ball')
+            print('Balls drawn are', sorted(self._balls_drawn), 'and bonus ball', self._bonus_balls_drawn)
+        print()
+
     def balls_drawn(self):
         if not self._done:
             self.do_draw()

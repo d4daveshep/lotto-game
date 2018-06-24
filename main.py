@@ -3,17 +3,26 @@
 from drum import Drum
 from line import Line
 from ticket import Ticket
+from draw import Draw
 
-SIZE = 10
-drum = Drum(SIZE)
-drawn_balls = []
-for i in range(SIZE):
-    drawn_balls.append(drum.draw())
+# create a new draw
+draw = Draw(1)
+draw.print_draw()
 
-#print(drawn_balls)
-
-#line = Line()
-#print(line.numbers())
-
+# create a ticket for the draw
 ticket = Ticket()
-print(ticket.print_ticket())
+ticket.print_ticket()
+
+# do the draw
+draw.do_draw()
+draw.print_draw()
+
+# check the ticket
+for line in ticket.lines():
+    win = draw.check_ticket_line(line)
+    line.print_line()
+    print('Won',win)
+
+# lines = ticket.lines()
+# print()
+# print(lines[0].print_line())
