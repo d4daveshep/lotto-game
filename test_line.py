@@ -33,16 +33,16 @@ def test_manually_chosen_line(new_line):
 
     # check correct line number count
     my_numbers = [1,2,3,4,5] # too few
-    with pytest.raises(LineException, message="Expecting LineException"):
+    with pytest.raises(LineException):
         line.pick_numbers(my_numbers)
 
     my_numbers = [1,2,3,4,5,6,7] # too many
-    with pytest.raises(LineException, message="Expecting LineException"):
+    with pytest.raises(LineException):
         line.pick_numbers(my_numbers)
 
     # check we can't add numbers that aren't valid balls in the drum
     my_numbers = [0,1,2,3,4,5]
-    with pytest.raises(LineException, message="Expecting LineException"):
+    with pytest.raises(LineException):
         line.pick_numbers(my_numbers)
 
 

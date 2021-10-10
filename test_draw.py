@@ -21,7 +21,7 @@ def test_thedraw(new_draw):
 
     # check we get an exception if we try to do another draw
     from draw import DrawAlreadyDoneException
-    with pytest.raises(DrawAlreadyDoneException, message="Expecting DrawAlreadyDoneException"):
+    with pytest.raises(DrawAlreadyDoneException):
         draw.do_draw()
 
     # check we draw out the correct number of balls

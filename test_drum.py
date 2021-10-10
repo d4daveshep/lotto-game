@@ -53,5 +53,5 @@ def test_draw_all_balls(new_drum):
 
     # get an Error if we try to get a ball from an empty drum
     from drum import EmptyDrumException
-    with pytest.raises(EmptyDrumException, message="Expecting EmptyDrumException"):
+    with pytest.raises(EmptyDrumException):
         drum.draw()

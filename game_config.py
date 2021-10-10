@@ -7,7 +7,7 @@ NUMBER_OF_BONUS_BALLS_PER_DRAW = 1
 DEFAULT_LINES_PER_TICKET = 10
 
 # use this for testing purposes to predict the sequence
-#random.seed(0)
+random.seed(0)
 
 # define the winning divisions
 DIVISION = {
